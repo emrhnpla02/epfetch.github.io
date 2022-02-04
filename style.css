@@ -1,0 +1,87 @@
+/* Bulmacss */
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
+/* Global */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto;
+  font-weight: bold;
+  background-image: url("./assets/background.png");
+  background-position: center;
+  background-size: cover;
+  color: white;
+}
+p {
+  margin: 3px 0;
+}
+
+/* Variables */
+.themecolor {
+  color: #81a2be;
+}
+
+/* Shitty part */
+#epfetch {
+  padding: 50px;
+  background-color: #1f2225;
+  opacity: 0.8;
+  width: 80%;
+  min-height: 40%;
+  transition: all linear 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+#epfetch .terminal:first-child {
+  margin-bottom: 10px;
+}
+#epfetch .terminal:last-child {
+  display: none;
+}
+#epfetch .terminal #command {
+  font-size: 14px;
+}
+#epfetch #fetchoutput #ascii_distro img {
+  width: 20rem;
+}
+#epfetch #fetchoutput #output {
+  font-size: 14px;
+}
+#epfetch #fetchoutput #output #_palette {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 0fr 0fr 0fr 0fr 0fr 0fr 0fr 0fr;
+}
+#epfetch #fetchoutput #output #_palette div {
+  width: 30px;
+  height: 20px;
+}
+
+#epfetch #fetchoutput #ascii_distro img,
+#epfetch #fetchoutput #output p,
+#epfetch #fetchoutput #output #_palette {
+  display: none;
+}
+
+/* Cursor Blink Animation */
+.cursor::after {
+  content: "";
+  width: 6px;
+  height: 17px;
+  background-color: white;
+  display: inline-block;
+  position: relative;
+  top: 3px;
+}
+.blink::after {
+  animation: cursor-blink 1.5s steps(2) infinite;
+}
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+}
