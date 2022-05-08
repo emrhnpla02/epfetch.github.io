@@ -1,11 +1,11 @@
 window.onload = () => {
-  const terminals = document.querySelectorAll(".terminal"),
+  const prompts = document.querySelectorAll(".prompt"),
     commandSpan = document.querySelector("#command"),
     command = "epfetch";
 
   setTimeout(() => {
     let j = 0;
-    terminals[0].children[1].classList = "cursor";
+    prompts[0].children[1].classList = "cursor";
     const commandloop = setInterval(() => {
       commandSpan.innerText += command[j++];
       if (j >= command.length) {
@@ -19,7 +19,7 @@ window.onload = () => {
     const items = document.querySelectorAll(".fetchitem"),
       paletteDiv = document.querySelector("#_palette");
 
-    terminals[0].children[1].classList = "";
+    prompts[0].children[1].classList = "";
 
     let i = 0;
     const loop = setInterval(() => {
@@ -29,8 +29,8 @@ window.onload = () => {
 
     setTimeout(() => {
       paletteDiv.style.display = "grid";
-      terminals[1].style.display = "block";
-      terminals[1].children[1].classList = "cursor blink";
+      prompts[1].style.display = "block";
+      prompts[1].children[1].classList = "cursor blink";
     }, 50 * items.length);
   };
 };
